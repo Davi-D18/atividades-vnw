@@ -22,7 +22,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 90vw;
   margin: auto;
 
   img {
@@ -67,19 +67,17 @@ header {
 // Estilos do conteúdo principal (Main)
 
 .container-main {
-  max-width: 1300px;
+  max-width: 90vw;
   margin: auto;
 }
 
 body {
   background-color: $fundo-main;
   cursor: url('../assets/cursor/varinha-magica.png') 27 4, auto;
-  fallback: auto; // se o navegador não suportar o cursor personalizado ou se o arquivo não for carregado, o navegador usará o cursor padrão
 }
 
 button, a {
   cursor: url("../assets/cursor/varinha-magica-hover.png") 27 4, auto;
-  fallback: auto;
 }
 
 main {
@@ -160,6 +158,35 @@ footer {
 
     &:hover::after {
       width: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding-bottom: 1.5rem;
+  }
+
+  .container-header {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .ep-description {
+    h1, span {
+      font-size: 28px;
+    }
+  }
+
+  .card-ep {
+    align-items: center;
+  }
+}
+
+@media (max-width: 481px) {
+  .ep-description {
+    img {
+      display: none;
     }
   }
 }

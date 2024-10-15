@@ -3,7 +3,7 @@ footer {
   padding: 10px;
   background-color: #282828;
   color: white;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
 }
@@ -11,4 +11,10 @@ footer {
 
 footer > p > span {
   margin-top: 9px;
+}
+
+@media (max-width: 768px) {
+  footer {
+    position: initial;
+  }
 }
