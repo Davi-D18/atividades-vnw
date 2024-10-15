@@ -49,6 +49,7 @@ ul a:hover::after {
 .container-conteudo {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   align-items: center;
   margin-top: 20vh;
 }
@@ -60,7 +61,7 @@ ul a:hover::after {
 }
 .container-conteudo .conteudo button {
   margin-block: 1rem;
-  padding-inline: 2rem;
+  padding-inline: 32px;
   padding-block: 7px;
   border-radius: 6px;
   border: none;
@@ -78,4 +79,55 @@ ul a:hover::after {
   display: flex;
   gap: 15px;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .container-header {
+    max-width: 87vw;
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+  .container-header ul {
+    gap: 3rem;
+  }
+  .container-conteudo {
+    max-width: 85vw;
+    margin: 7vh auto;
+    flex-direction: column-reverse;
+  }
+  .conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .conteudo button {
+    width: 200px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+  .conteudo h2 {
+    font-size: 1.2em;
+    text-align: center;
+  }
+  .social-icons {
+    justify-content: space-evenly;
+    width: 62%;
+  }
+  .social-icons img {
+    width: 38px;
+  }
+  .coffe {
+    margin: 0 auto;
+    margin-bottom: 4vh;
+  }
+  .coffe img {
+    width: 90%;
+  }
+}
+@media (max-width: 481px) {
+  .social-icons {
+    width: 80%;
+  }
 }/*# sourceMappingURL=index.css.map */
