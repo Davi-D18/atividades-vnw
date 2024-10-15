@@ -1,0 +1,32 @@
+header {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease;
+
+  background: linear-gradient(135deg, #007bff, #1379b4, #005daf, #003c7e);
+  background-size: 400% 400%;
+  animation: gradientAnimation 8s ease infinite;
+}
+
+header.visible {
+  transform: translateY(0);
+}
+
+header h1 {
+  margin-bottom: 10px;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

@@ -1,0 +1,1 @@
+Link para o Figma: https://www.figma.com/design/Ki8xFmvyHwjrAJmNgZmp6U/get-coffee-layout-(Copy)?node-id=59-4&node-type=frame&t=J08QxJbOzTkVRQj1-0

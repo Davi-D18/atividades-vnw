@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+$fundo-header-footer: #111111;
+$botao-acessar-agora: #df0712;
+$fundo-main: #181818;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+// Estilos do Header
+
+header {
+  background-color: $fundo-header-footer;
+  padding: 1.2rem 0rem;
+}
+
+.container-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+
+  img {
+    width: 170px;
+  }
+
+  .login {
+    display: flex;
+    gap: 4rem;
+
+    button {
+      border: none;
+      padding: 0.7rem 0.92rem;
+      border-radius: 7px;
+      color: white;
+      font-weight: 500;
+
+      &:hover {
+        transform: scale(0.98);
+      }
+    }
+
+    .acessar {
+      background-color: $botao-acessar-agora;
+
+      &:hover {
+        background-color: #df0712ce;
+      }
+    }
+
+    .entrar {
+      background-color: rgb(2, 95, 2);
+
+      &:hover {
+        background-color: rgba(2, 95, 2, 0.829);
+        ;
+      }
+    }
+  }
+}
+
+// Estilos do conteúdo principal (Main)
+
+.container-main {
+  max-width: 1300px;
+  margin: auto;
+}
+
+body {
+  background-color: $fundo-main;
+  cursor: url('../assets/cursor/varinha-magica.png') 27 4, auto;
+  fallback: auto; // se o navegador não suportar o cursor personalizado ou se o arquivo não for carregado, o navegador usará o cursor padrão
+}
+
+button, a {
+  cursor: url("../assets/cursor/varinha-magica-hover.png") 27 4, auto;
+  fallback: auto;
+}
+
+main {
+  color: white;
+
+  .ep-description {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0px;
+
+    img {
+      width: 120px;
+    }
+
+    .titulo {
+      font-size: 28px;
+    }
+  }
+
+  .cards-eps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+
+    .card-ep {
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-inline: 0.9rem;
+
+      h2 {
+        font-size: 22px;
+      }
+
+      p {
+        font-size: 15px;
+        width: 80%;
+        line-height: 1.4;
+      }
+    }
+
+    img {
+      width: 280px;
+      border-radius: 5px;
+    }
+  }
+}
+
+// Estilos do Footer
+
+footer {
+  background-color: $fundo-header-footer;
+  padding: 1.4rem 2rem;
+  margin-top: 3rem;
+
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+
+  a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    
+    &::after {
+      content: '';
+      width: 0;
+      height: 2px;
+      background-color: white;
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      transition: width 0.4s ease-in-out;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
