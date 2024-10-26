@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividades Interativas</title>
+    <link rel="shortcut icon" href="./src/icons/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Atividades de Lógica de Programação</h1>
+    </header>
+    <section class="container">
+      <!-- Atividade 1: Verificação de Dia ou Noite -->
+      <article class="atividade-card">
+        <h2>Atividade 1: Verificação de Dia ou Noite</h2>
+        <div class="resultado" id="resultadoDiaNoite"></div>
+        <div class="container-button">
+          <button id="dia-noite">
+            <div class="spinner"></div>
+            Verificar
+          </button>
+        </div>
+      </article>
+
+      <!-- Atividade 2: Verificação de Temperatura -->
+      <article class="atividade-card">
+        <h2>Atividade 2: Verificação de Temperatura</h2>
+        <label for="tempInput">Digite o nome de uma cidade</label>
+        <input type="text" id="tempInput" />
+        <div class="container-button">
+          <button id="temperatura">
+            <div class="spinner"></div>
+            Verificar
+          </button>
+        </div>
+        <div class="resultado" id="resultadoTemperatura"></div>
+      </article>
+
+      <!-- Atividade 3: Verificação de Faixa Etária -->
+      <article class="atividade-card">
+        <h2>Atividade 3: Verificação de Faixa Etária</h2>
+        <label for="idadeInput">Idade:</label>
+        <input type="number" id="idadeInput" />
+        <div class="container-button">
+          <button id="faixa-etaria">
+            <div class="spinner"></div>
+            Verificar
+          </button>
+        </div>
+        <div class="resultado" id="resultadoFaixaEtaria"></div>
+      </article>
+
+      <!-- Atividade 4: Calculadora de Notas -->
+      <article class="atividade-card">
+        <h2>Atividade 4: Calculadora de Notas</h2>
+        <label for="notaInput">Nota:</label>
+        <input type="number" id="notaInput" step="0.1" />
+        <div class="container-button">
+          <button id="nota">
+            <div class="spinner"></div>
+            Calcular Nota
+          </button>
+        </div>
+        <div class="resultado" id="resultadoNota"></div>
+      </article>
+    </section>
+
+    <!-- Cada script é relacionado a uma atividade -->
+    <script type="module" src="./src/js/dia_noite.js"></script>
+    <script type="module" src="./src/js/verificar_temperatura.js"></script>
+    <script type="module" src="./src/js/verificar_idade.js"></script>
+    <script type="module" src="./src/js/verificar_nota.js"></script>
+
+  </body>
+</html>

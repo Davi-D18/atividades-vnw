@@ -28,8 +28,21 @@
     </header>
 
     <main>
-      <div class="activities-container" id="activities-container">
+      <section class="activities-container" id="activities-container">
         <!-- Atividades serão inseridas aqui pelo JavaScript -->
+      </section>
+
+      <!-- Modal para informações expandidas -->
+      <div class="overlay" id="overlay">
+        <div class="overlay-content">
+          <button class="close-btn" id="closeBtn">&times;</button>
+          <img id="overlayImg" src="" alt="Foto do Projeto" />
+          <h2 id="overlayName"></h2>
+          <p id="overlayDescription"></p>
+          <div id="modal-tech-badges" class="tech-badges"></div>
+
+          <a class="link-atividade" href=""></a>
+        </div>
       </div>
     </main>
 

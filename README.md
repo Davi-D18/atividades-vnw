@@ -46,6 +46,8 @@ As atividades estão organizadas por tópicos e você pode visualizar cada uma n
   - [Acesse no GitHub](https://davi-d18.github.io/atividades-vnw/src/activities/atv01_projeto-coffe)
 - **Atividade 2**: Projeto Padrinhos Mágicos  
   - [Acesse no GitHub](https://davi-d18.github.io/atividades-vnw/src/activities/atv02_padrinhos-magicos)
+- **Atividade 3**: Lógica JavaScript  
+  - [Acesse no GitHub](https://davi-d18.github.io/atividades-vnw/src/activities/atv03_logica-js)
 
 ## ⚙️ Tecnologias Utilizadas
 

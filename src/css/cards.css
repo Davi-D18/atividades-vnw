@@ -69,6 +69,7 @@
   padding: 10px 0;
   border-radius: 5px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .activity-link:hover {
@@ -79,4 +80,92 @@
   .activity-card:hover {
     transform: translateY(0px) scale(1);
   }
+}
+
+/* Configura o modal para exibição com opacidade adequada */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex; /* Para que o modal seja exibido no centro */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  display: none;
+  transition: opacity 0.5s ease;
+}
+
+.overlay.active {
+  display: flex; /* Altera para visível quando ativo */
+}
+
+.overlay-content {
+  background-color: white;
+  padding: 40px;
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+  transform: scale(0.9);
+  transition: all 0.5s ease;
+}
+
+#overlayImg {
+  width: 90%;
+  border-radius: 8px;
+  margin: 3vh 0vh;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 35px;
+  color: #333;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  line-height: 0.8;
+}
+
+.close-btn:hover {
+  color: #d11616be;
+  transition: color 0.3s ease-in;
+}
+
+.tech-badges {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: flex;
+  align-items: center; 
+  background: linear-gradient(135deg, #007bff, #28a745);
+  color: white; 
+  padding: 8px 16px; 
+  border-radius: 20px;
+  border: 2px solid transparent;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.tech-logo {
+  width: 25px; 
+  height: 25px; 
+  margin-right: 5px;
+}
+
+.tech-name {
+  margin-left: 5px; 
 }
