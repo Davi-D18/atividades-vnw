@@ -20,6 +20,10 @@
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
+.activity-card:nth-child(1), .activity-card:nth-child(2) {
+  padding-inline: 2rem;
+}
+
 /* Classe que será adicionada para a animação */
 .activity-card.show {
   opacity: 1;
@@ -34,7 +38,7 @@
 @keyframes cardFadeIn {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(100px);
   }
   100% {
     opacity: 1;
@@ -100,6 +104,9 @@
 
 .overlay.active {
   display: flex; /* Altera para visível quando ativo */
+  opacity: 0;
+  display: flex;
+  animation: cardFadeIn 0.7s forwards;
 }
 
 .overlay-content {
@@ -111,13 +118,18 @@
   border-radius: 10px;
   position: relative;
   transform: scale(0.9);
-  transition: all 0.5s ease;
+  transition: all 0.6s ease;
+}
+
+.overlay.active .overlay-content {
+  transform: scale(1);
+  transition: all 0.6s ease;
 }
 
 #overlayImg {
-  width: 90%;
+  width: 85%;
   border-radius: 8px;
-  margin: 3vh 0vh;
+  margin: 1vh 0vh;
 }
 
 .close-btn {

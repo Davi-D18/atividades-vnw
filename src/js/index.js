@@ -24,7 +24,7 @@ function renderActivities() {
     link.setAttribute("data-img", activity.image);
     link.setAttribute("data-name", activity.title);
     link.setAttribute("data-role", activity.role);
-    link.setAttribute("data-description", activity.description);
+    link.setAttribute("data-description", activity.descriptionTwo);
     link.setAttribute("data-link", activity.link);
 
     const image = document.createElement("img");
@@ -57,6 +57,7 @@ function initModal() {
   const overlayDescription = document.getElementById("overlayDescription");
   const closeBtn = document.getElementById("closeBtn");
   const techContainer = document.getElementById("modal-tech-badges");
+  const overlayContent = document.querySelector(".overlay-content");
 
   const link = document.querySelector(".overlay-content > a");
   link.classList.add("activity-link");
@@ -100,18 +101,35 @@ function initModal() {
       link.target = "_blank"; // Abre em nova aba
 
       overlay.classList.add("active"); // Exibe o modal
+
+      // Adiciona uma pequena animação de crescimento suave ao conteúdo do modal
+      setTimeout(() => {
+        overlayContent.style.transform = "scale(1)";
+        overlayContent.style.opacity = "1";
+      }, 100); // Um pequeno delay para suavizar a transição
     });
   });
 
   // Fecha o modal ao clicar no botão de fechar
   closeBtn.addEventListener("click", () => {
-    overlay.classList.remove("active");
+    overlayContent.style.transform = "translateY(100px)";
+    overlayContent.style.opacity = "0";
+
+    // Depois de um pequeno atraso, fecha o overlay completamente
+    setTimeout(() => {
+      overlay.classList.remove("active");
+    }, 300); // Tempo suficiente para a animação ser concluída
   });
 
   // Fecha o modal ao clicar fora do conteúdo do modal
   overlay.addEventListener("click", (e) => {
     if (e.target === overlay) {
-      overlay.classList.remove("active");
+      overlayContent.style.transform = "translateY(100px)";
+      overlayContent.style.opacity = "0";
+
+      setTimeout(() => {
+        overlay.classList.remove("active");
+      }, 300);
     }
   });
 }
