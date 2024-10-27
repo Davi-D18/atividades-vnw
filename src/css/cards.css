@@ -16,7 +16,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateX(-100%) rotate(-5deg);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
@@ -24,21 +24,33 @@
   padding-inline: 2rem;
 }
 
+
 /* Classe que será adicionada para a animação */
 .activity-card.show {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(0) rotate(0deg);
 }
 
 .activity-card:hover {
-  transform: translateY(-7px) scale(1.02);
+  transform: translateY(-5px) scale(1.02);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 @keyframes cardFadeIn {
   0% {
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateY(100px) rotate(-5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes cardUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
   }
   100% {
     opacity: 1;
@@ -94,19 +106,15 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  display: flex; /* Para que o modal seja exibido no centro */
   justify-content: center;
   align-items: center;
   z-index: 1000;
   display: none;
-  transition: opacity 0.5s ease;
 }
 
 .overlay.active {
   display: flex; /* Altera para visível quando ativo */
-  opacity: 0;
-  display: flex;
-  animation: cardFadeIn 0.7s forwards;
+  opacity: 1;
 }
 
 .overlay-content {
@@ -117,13 +125,8 @@
   text-align: center;
   border-radius: 10px;
   position: relative;
-  transform: scale(0.9);
-  transition: all 0.6s ease;
-}
-
-.overlay.active .overlay-content {
-  transform: scale(1);
-  transition: all 0.6s ease;
+  transform: translateY(100%); /* Inicialmente fora da tela */
+  transition: transform 0.5s ease-out;
 }
 
 #overlayImg {

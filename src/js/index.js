@@ -1,11 +1,12 @@
 import { activities } from "./info-atividades.js";
+import { observarCards } from "./observer.js";
 
 function renderActivities() {
   const container = document.getElementById("activities-container");
   container.innerHTML = ""; // Limpa o container antes de renderizar
 
   activities.forEach((activity) => {
-    const card = document.createElement("div");
+    const card = document.createElement("article");
     card.classList.add("activity-card");
 
     const title = document.createElement("h3");
@@ -40,13 +41,7 @@ function renderActivities() {
     container.appendChild(card);
   });
 
-  // Animação de exibição dos cards
-  const cards = document.querySelectorAll(".activity-card");
-  cards.forEach((card, index) => {
-    setTimeout(() => {
-      card.classList.add("show");
-    }, index * 300); // O tempo de delay para cada card (300ms entre cada um)
-  });
+  observarCards();
 }
 
 function initModal() {
@@ -102,18 +97,15 @@ function initModal() {
 
       overlay.classList.add("active"); // Exibe o modal
 
-      // Adiciona uma pequena animação de crescimento suave ao conteúdo do modal
       setTimeout(() => {
-        overlayContent.style.transform = "scale(1)";
-        overlayContent.style.opacity = "1";
-      }, 100); // Um pequeno delay para suavizar a transição
+        overlayContent.style.transform = "translateY(0)";
+      }, 10);
     });
   });
 
   // Fecha o modal ao clicar no botão de fechar
   closeBtn.addEventListener("click", () => {
-    overlayContent.style.transform = "translateY(100px)";
-    overlayContent.style.opacity = "0";
+    overlayContent.style.transform = "translateY(100%)";
 
     // Depois de um pequeno atraso, fecha o overlay completamente
     setTimeout(() => {
@@ -124,8 +116,7 @@ function initModal() {
   // Fecha o modal ao clicar fora do conteúdo do modal
   overlay.addEventListener("click", (e) => {
     if (e.target === overlay) {
-      overlayContent.style.transform = "translateY(100px)";
-      overlayContent.style.opacity = "0";
+      overlayContent.style.transform = "translateY(100%)";
 
       setTimeout(() => {
         overlay.classList.remove("active");
