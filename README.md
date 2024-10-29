@@ -6,7 +6,7 @@ Este repositório agrupa todas as atividades realizadas ao longo do curso, dispo
 
 👇🏻 Você pode visualizar todas as atividades no site 
 
-[**Acesse o site com as atividades aqui**](https://davi-d18.github.io/atividades-vnw)
+[**Acesse o site com as atividades aqui**][def]
 
 ## 📖 Sobre o Repositório
 
@@ -84,7 +84,7 @@ As atividades estão organizadas por tópicos e você pode visualizar cada uma n
 
 - **Atividade 1**: Projeto Get Coffe  
   - [Acesse no GitHub](https://davi-d18.github.io/atividades-vnw/src/activities/atv01_projeto-coffe)
-- **Atividade 2**: Projeto Padrinhos Mágicos  
+- **Atividade 2**: Padrinhos Mágicos  
   - [Acesse no GitHub](https://davi-d18.github.io/atividades-vnw/src/activities/atv02_padrinhos-magicos)
 - **Atividade 3**: Lógica JavaScript  
   - [Acesse no GitHub](https://davi-d18.github.io/atividades-vnw/src/activities/atv03_logica-js)
@@ -97,3 +97,5 @@ As atividades estão organizadas por tópicos e você pode visualizar cada uma n
 - **GitHub Pages** para hospedar o site
 
 
+
+[def]: https://davi-d18.github.io/atividades-vnw

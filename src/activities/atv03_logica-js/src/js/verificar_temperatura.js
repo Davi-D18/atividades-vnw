@@ -59,7 +59,7 @@ async function buscarTemperatura(cidade) {
 
     verificarTemperatura(temperatura, cidadeComNomeFormatado);
   } catch (error) {
-    resultadoTemperatura.innerHTML = `<p class="error">Erro ao buscar a temperatura. Tente novamente mais tarde :(</p>`;
+    resultadoTemperatura.innerHTML = `<p class="resultado-erro">Erro ao buscar. Tente novamente mais tarde :(</p>`;
   } finally {
     aparecerSpinner("#temperatura", false); // Oculta o spinner
     document.querySelector("#tempInput").value = "";

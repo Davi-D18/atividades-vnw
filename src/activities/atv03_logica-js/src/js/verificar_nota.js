@@ -6,6 +6,13 @@ const resultadoNota = document.querySelector("#resultadoNota");
 botao.addEventListener("click", () => {
   resultadoNota.textContent = ""
   const notaDoAluno = document.querySelector("#notaInput").value;
+
+  if (notaDoAluno == 0) {
+    resultadoNota.innerHTML = `
+    <p class="resultado-erro">Insira uma nota válida</p>
+    `;
+    return;
+  }
   resultadoNota.className = "resultado"
 
   aparecerSpinner("#nota", true);

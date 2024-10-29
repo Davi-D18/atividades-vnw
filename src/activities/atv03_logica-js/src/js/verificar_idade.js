@@ -6,6 +6,13 @@ const resultadoFaixaEtaria = document.querySelector("#resultadoFaixaEtaria");
 botao.addEventListener("click", () => {
   resultadoFaixaEtaria.textContent = "";
   const idadeDoUsuario = document.querySelector("#idadeInput").value;
+
+  if (idadeDoUsuario == 0) {
+    resultadoFaixaEtaria.innerHTML = `
+    <p class="resultado-erro">Insira um número válido</p>
+    `;
+    return;
+  }
   resultadoFaixaEtaria.className = "resultado"
 
   aparecerSpinner("#faixa-etaria", true);
