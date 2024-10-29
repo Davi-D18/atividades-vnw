@@ -4,7 +4,7 @@ Este repositório agrupa todas as atividades realizadas ao longo do curso, dispo
 
 ## 🔗 Acesso Rápido
 
-Você pode visualizar todas as atividades no nosso site, hospedado pelo GitHub Pages:
+👇🏻 Você pode visualizar todas as atividades no site 
 
 [**Acesse o site com as atividades aqui**](https://davi-d18.github.io/atividades-vnw)
 
@@ -14,11 +14,51 @@ Este repositório centraliza as atividades do curso e exibe cada uma delas como 
 
 ### Estrutura do Repositório
 
+```plaintext
+/src
+  ├── /activities
+  │
+  ├── /js
+  │   ├── index.js           
+  │   ├── info-atividades.js
+  │   └── observer.js
+  ├── /css
+  │   ├── cards.css
+  │   ├── footer.css
+  │   ├── global.css
+  │   └── header.css
+  ├── /assets
+  │   ├── # icons
+  │   └── # screenshots
+  └── index.html
+```
+
 - **`/src/`**: Contém os arquivos da aplicação.
+
   - **`/activities/`**: Armazena os dados de cada atividade, que são renderizados dinamicamente.
   - **`/js/`**: Scripts JavaScript para carregar e exibir as atividades.
-  - **`/css/`**: Arquivo de estilos para o layout e design da página. 
+
+    - **`index.js`**: Arquivo principal que renderiza as atividades, exibi alguns elementos na tela e exibi um card com mais informações de cada atividade.
+
+    - **`observer.js`**: Script que exibi os cards na tela quando o usuário está rolando a página e remove os que não estão sendo exibidos na tela.
+
+    - **`observer.js`**: Script com informações detalhadas de cada atividade.
+
+  - **`/css/`**: Arquivo de estilos para o layout e design da página.
+
+    - **`cards.css`**: Define os estilos para os cards de atividades.
+    
+    - **`footer.css`**: Estilos específicos para o rodapé da página.
+    
+    - **`global.css`**: Estilos globais aplicados em toda a aplicação.
+    
+    - **`header.css`**: Estilos específicos para o cabeçalho da página.
+
   - **`/assets/`**: Onde fica imagens e icones usados
+
+    - **`/screenshots/`**: Contém capturas de tela de cada atividade, exibidas nos cards.
+    
+    - **`/icons/`**: Armazena os ícones, como favicon do site.
 - **`index.html`**: Arquivo principal que carrega o site.
 
 
