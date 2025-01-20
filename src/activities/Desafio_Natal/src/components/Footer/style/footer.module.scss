@@ -1,0 +1,63 @@
+footer {
+  background-color: $red;
+  background-image: url("@img/fundos/fundo-header.png");
+  padding: 12px 0;
+
+  .containerFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 93vw;
+    margin: 0 auto;
+    font-family: $fontInter;
+  }
+}
+
+.redesSociais {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem; 
+  
+  img {
+    cursor: pointer;
+  }
+}
+
+.info {
+  font-size: 1.8rem;
+  list-style-type: none;
+  text-align: center;
+
+  li {
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: $mobile) {
+  footer {
+    padding: 20px 0;
+  }
+
+  .containerFooter {
+    flex-direction: column;
+    gap: 2.8rem;
+  }
+
+  .redesSociais {
+    gap: 2.4rem;
+
+    img {
+      width: 45%;
+    }
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .presentes {
+    display: none;
+  }
+}

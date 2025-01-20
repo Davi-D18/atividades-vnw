@@ -20,14 +20,20 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   </head>
   <body>
     <header>
       <h1>Atividades do Curso</h1>
-      <p>Explore as atividades feitas durante o curso :)</p>
+      <p>Explore as atividades e projetos feitos durante o curso FullStack no Vai na Web :)</p>
     </header>
 
     <main>
+      <div class="filter-buttons">
+        <button id="all" data-category="todos">Todos</button>
+        <button id="atividades" data-category="atividade">Atividades</button>
+        <button id="projetos" data-category="projeto">Projetos</button>
+      </div>
       <section class="activities-container" id="activities-container">
         <!-- Atividades serão inseridas aqui pelo JavaScript -->
       </section>
@@ -41,8 +47,10 @@
           <p id="overlayDescription"></p>
           <div id="modal-tech-badges" class="tech-badges"></div>
 
-          <a class="link-atividade" href=""></a>
-        </div>
+          <div class="container-buttons">
+            <a class="link-atividade" href=""></a>
+            </div>
+            </div>
       </div>
     </main>
 
@@ -51,6 +59,19 @@
         Desenvolvido por
         <span><img class="favicon-rodape" src="./src/assets/icons/favicon.png" alt="Ícone" /></span>
       </p>
+      <ul>
+        <li>
+          <a href="https://github.com/Davi-D18" target="_blank">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://www.linkedin.com/in/luiz-davi-araujo" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </li>
+      </ul>
     </footer>
 
     <script type="module" src="./src/js/index.js"></script>

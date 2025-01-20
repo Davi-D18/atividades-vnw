@@ -1,0 +1,28 @@
+// Cores
+$white: #FFF;
+$red: #FF0707;
+$black: #000;
+$gray: #D9D9D9;
+$yellow: #FFEA00;
+
+// Fonte
+$font: 'Inter', sans-serif;
+
+// Peso da fonte
+$regular: 400;
+$medium: 500;
+$bold: 600;
+
+// Mixins
+@mixin center-flex($direction: both) {
+  display: flex;
+
+  @if $direction == both {
+    align-items: center;
+    justify-content: center;
+  } @else if $direction == horizontal {
+    justify-content: center;
+  } @else if $direction == vertical {
+    align-items: center;
+  }
+}

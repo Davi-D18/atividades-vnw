@@ -1,45 +1,47 @@
 import { activities } from "./info-atividades.js";
 import { observarCards } from "./observer.js";
 
-function renderActivities() {
+function renderActivities(category = "todos") {
   const container = document.getElementById("activities-container");
-  container.innerHTML = ""; // Limpa o container antes de renderizar
+  container.innerHTML = "";
 
-  activities.forEach((activity) => {
-    const card = document.createElement("article");
-    card.classList.add("activity-card");
+  activities
+    .filter(activity => category === "todos" || activity.category === category)
+    .forEach(activity => {
+      const card = document.createElement("article");
+      card.classList.add("activity-card");
 
-    const title = document.createElement("h3");
-    title.classList.add("activity-title");
-    title.textContent = activity.title;
+      const title = document.createElement("h3");
+      title.classList.add("activity-title");
+      title.textContent = activity.title;
 
-    const description = document.createElement("p");
-    description.classList.add("activity-description");
-    description.textContent = activity.description;
+      const description = document.createElement("p");
+      description.classList.add("activity-description");
+      description.textContent = activity.description;
 
-    const link = document.createElement("a");
-    link.classList.add("activity-link");
-    link.textContent = "Mais Informações";
+      const link = document.createElement("a");
+      link.classList.add("activity-link");
+      link.textContent = "Mais Informações";
+      link.setAttribute("data-img", activity.image);
+      link.setAttribute("data-name", activity.title);
+      link.setAttribute("data-description", activity.descriptionTwo);
+      link.setAttribute("data-link", activity.link);
 
-    // Adicionando os atributos `data-*` para o modal
-    link.setAttribute("data-img", activity.image);
-    link.setAttribute("data-name", activity.title);
-    link.setAttribute("data-role", activity.role);
-    link.setAttribute("data-description", activity.descriptionTwo);
-    link.setAttribute("data-link", activity.link);
+      if (activity.linkRepositorio) {
+        link.setAttribute("data-link-repositorio", activity.linkRepositorio);
+      }
 
-    const image = document.createElement("img");
-    image.classList.add("activity-image");
-    image.src = activity.image;
-    image.alt = activity.alt;
+      const image = document.createElement("img");
+      image.classList.add("activity-image");
+      image.src = activity.image;
+      image.alt = activity.alt;
 
-    card.appendChild(title);
-    card.appendChild(image);
-    card.appendChild(description);
-    card.appendChild(link);
-
-    container.appendChild(card);
-  });
+      card.appendChild(title);
+      card.appendChild(image);
+      card.appendChild(description);
+      card.appendChild(link);
+      container.appendChild(card);
+    });
 
   observarCards();
 }
@@ -53,28 +55,20 @@ function initModal() {
   const closeBtn = document.getElementById("closeBtn");
   const techContainer = document.getElementById("modal-tech-badges");
   const overlayContent = document.querySelector(".overlay-content");
-
-  const link = document.querySelector(".overlay-content > a");
-  link.classList.add("activity-link");
-  link.textContent = "Visualizar";
+  const containerButtons = document.querySelector(".overlay-content > .container-buttons");
 
   projects.forEach((project) => {
     project.addEventListener("click", (event) => {
-      event.preventDefault(); // Evita redirecionamento padrão
+      event.preventDefault();
 
-      // Preenche os dados do modal
       overlayImg.src = project.getAttribute("data-img");
       overlayName.textContent = project.getAttribute("data-name");
       overlayDescription.textContent = project.getAttribute("data-description");
-
-      // Limpa as badges anteriores
       techContainer.innerHTML = "";
+      containerButtons.innerHTML = "";
 
-      // Adiciona as badges de tecnologia
-      const technologies = activities.find(
-        (activity) => activity.title === project.getAttribute("data-name")
-      ).technologies;
-      technologies.forEach((tech) => {
+      const activity = activities.find((act) => act.title === project.getAttribute("data-name"));
+      activity.technologies.forEach((tech) => {
         const badge = document.createElement("span");
         badge.classList.add("badge");
 
@@ -92,32 +86,49 @@ function initModal() {
         techContainer.appendChild(badge);
       });
 
-      link.href = project.getAttribute("data-link"); // Define o link da atividade
-      link.target = "_blank"; // Abre em nova aba
+      const viewLink = document.createElement("a");
+      viewLink.classList.add("activity-link");
+      viewLink.textContent = "Visualizar Projeto";
 
-      overlay.classList.add("active"); // Exibe o modal
+      const icon = document.createElement("i");
+      icon.classList.add("fa-solid", "fa-up-right-from-square");
 
+      viewLink.appendChild(icon);
+      viewLink.href = activity.link;
+      viewLink.target = "_blank";
+      containerButtons.appendChild(viewLink);
+
+      if (activity.linkRepositorio) {
+        const repoLink = document.createElement("a");
+        repoLink.classList.add("activity-link");
+        repoLink.textContent = "Visualizar Repositório";
+        repoLink.href = activity.linkRepositorio;
+        repoLink.target = "_blank";
+
+        const icon = document.createElement("i");
+        icon.classList.add("fa-brands", "fa-github");
+
+        repoLink.appendChild(icon);
+        containerButtons.appendChild(repoLink);
+      }
+
+      overlay.classList.add("active");
       setTimeout(() => {
         overlayContent.style.transform = "translateY(0)";
       }, 10);
     });
   });
 
-  // Fecha o modal ao clicar no botão de fechar
   closeBtn.addEventListener("click", () => {
     overlayContent.style.transform = "translateY(100%)";
-
-    // Depois de um pequeno atraso, fecha o overlay completamente
     setTimeout(() => {
       overlay.classList.remove("active");
-    }, 300); // Tempo suficiente para a animação ser concluída
+    }, 300);
   });
 
-  // Fecha o modal ao clicar fora do conteúdo do modal
   overlay.addEventListener("click", (e) => {
     if (e.target === overlay) {
       overlayContent.style.transform = "translateY(100%)";
-
       setTimeout(() => {
         overlay.classList.remove("active");
       }, 300);
@@ -125,9 +136,33 @@ function initModal() {
   });
 }
 
+const buttons = document.querySelectorAll(".filter-buttons button");
+
+document.querySelector("#all").style.backgroundColor = "#188030";
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const selectedCategory = button.getAttribute("data-category");
+
+    buttons.forEach((btn) => {
+      btn.style.backgroundColor = ""
+    })
+
+    button.style.backgroundColor = "#188030";
+
+    filterActivities(selectedCategory);
+  });
+});
+
+
 function animateHeader() {
   const header = document.querySelector("header");
   header.classList.add("visible");
+}
+
+function filterActivities(category) {
+  renderActivities(category);
+  initModal();
 }
 
 window.addEventListener("load", () => {
