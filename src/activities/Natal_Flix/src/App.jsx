@@ -59,7 +59,6 @@ export function App() {
             {filmes.map((filme) => (
               <CardFilme
                 key={filme.id}
-                id={filme.id}
                 imagem={filme.image}
                 progresso={filme.progress}
               />
