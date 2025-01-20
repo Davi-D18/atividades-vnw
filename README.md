@@ -35,14 +35,14 @@ Este repositório centraliza as atividades do curso e exibe cada uma delas como 
 
 - **`/src/`**: Contém os arquivos da aplicação.
 
-  - **`/activities/`**: Armazena os dados de cada atividade, que são renderizados dinamicamente.
+  - **`/activities/`**: Armazena os arquivos de cada atividade (algumas atividades / projetos podem estar em repositórios separados).
   - **`/js/`**: Scripts JavaScript para carregar e exibir as atividades.
 
     - **`index.js`**: Arquivo principal que renderiza as atividades, exibi alguns elementos na tela e exibi um card com mais informações de cada atividade.
 
     - **`observer.js`**: Script que exibi os cards na tela quando o usuário está rolando a página e remove os que não estão sendo exibidos na tela.
 
-    - **`observer.js`**: Script com informações detalhadas de cada atividade.
+    - **`info-atividaes.js`**: Script com informações detalhadas de cada atividade.
 
   - **`/css/`**: Arquivo de estilos para o layout e design da página.
 
@@ -80,22 +80,12 @@ Agora, você verá a página inicial com os cards das atividades.
 
 ## 📂 Atividades Disponíveis
 
-As atividades estão organizadas por tópicos e você pode visualizar cada uma no site ou diretamente no repositório correspondente:
-
-- **Atividade 1**: Projeto Get Coffe  
-  - [Acesse no GitHub](https://davi-d18.github.io/atividades-vnw/src/activities/atv01_projeto-coffe)
-- **Atividade 2**: Padrinhos Mágicos  
-  - [Acesse no GitHub](https://davi-d18.github.io/atividades-vnw/src/activities/atv02_padrinhos-magicos)
-- **Atividade 3**: Lógica JavaScript  
-  - [Acesse no GitHub](https://davi-d18.github.io/atividades-vnw/src/activities/atv03_logica-js)
+As atividades estão organizadas por nomes e você pode visualizar cada uma no site ou diretamente no repositório correspondente
 
 ## ⚙️ Tecnologias Utilizadas
 
 - **HTML** para estruturação do conteúdo
 - **CSS** para estilização e design responsivo
 - **JavaScript** para dinamizar a página e carregar atividades
-- **GitHub Pages** para hospedar o site
-
-
 
 [def]: https://davi-d18.github.io/atividades-vnw
