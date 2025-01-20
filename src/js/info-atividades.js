@@ -111,7 +111,7 @@ export const activities = [
   {
     title: "Feliz Natal!",
     description:
-      "Recriando um layout no Figma de um site desejando feliz natal ",
+      "Um projeto para recriar um layout no Figma de um site desejando feliz Natal com algumas animações",
     descriptionTwo: `O objetivo principal era desenvolver esse site para que os usuários possam ver e aproveitar essa data especial`,
     category: "projeto",
     link: "https://desafio-natal-ruddy.vercel.app/",
@@ -137,9 +137,9 @@ export const activities = [
     title: "Natal Flix",
     description:
       "Recriando um layout no Figma de um site sobre filmes de Natal para os usuários verem filmes com temática natal terror",
-    descriptionTwo: `O objetivo principal era desenvolver uma interface intuitiva eácil de usar para que os usuários possam ver filmes de Natal de forma rápida e prática, sem sair de casa.`,
+    descriptionTwo: `O objetivo era desenvolver uma interface para exibir filmes com tema natal e terror`,
     category: "projeto",
-    link: "./src/activities/Natal_Flix/dist",
+    link: "https://natal-flix-pearl.vercel.app/",
     image: "./src/assets/screenshots/natal-flix.png",
     alt: `${description}`,
     technologies: [
@@ -155,12 +155,13 @@ export const activities = [
         nome: "React",
         link: "https://cdn.icon-icons.com/icons2/2415/PNG/512/react_original_logo_icon_146374.png"
       }
-    ]
+    ],
+    linkRepositorio: "https://github.com/Davi-D18/Natal_Flix"
   },
   {
     title: "Feliz Ano Novo!",
     description:
-      "Recriando um layout no Figma de um site desejando feliz ano novo ",
+      "Um projeto desejando Feliz Ano Novo com algumas animações e outras coisas interessantes",
     descriptionTwo: `O objetivo principal era desenvolver esse site desejando feliz ano novo`,
     category: "atividade",
     link: "https://ano-novo-2025-kappa.vercel.app/",

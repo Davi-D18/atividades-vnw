@@ -19,6 +19,15 @@ header h1 {
   margin-bottom: 10px;
 }
 
+.vnw::before {
+  content: "🔗";
+  margin-right: 3px;
+}
+
+.vnw a {
+  text-decoration: none;
+  color: white;
+}
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
